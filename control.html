@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myforme {
+            margin-left: 400px;
+        }
+
+        .nom {
+
+            width: 700px;
+            height: 100;
+        }
+        .mess{
+            height: 150px;
+            width: 700px;
+        }
+        #butt{
+            background: blue;
+            color: aliceblue;
+            width: 200px;
+            height: 100px;
+            border-radius: 30%;
+            margin-left: 220px;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+ 
+        <form action="traitement.php" method="post" id="myforme">
+            <label for="usermane"></label>
+            <input type="text" name="username" placeholder="Nom et Prénom" id="usernam" class="nom">
+            <br>
+            <span id="erro"></span>
+            <br>
+
+
+            <label for="usermane"></label>
+            <input type="text" name="username"  placeholder="Email" id="usernamee" class="nom">
+            <br>
+            <span id="errore"></span>
+            <br>
+    
+    <label for="usermane"></label>
+    <input type="text" name="username" placeholder="Votre message" id="usernamee" class="mess">
+    <br>
+    <span id="errore"></span>
+    <br>
+
+    <button type="submit" id="butt">Envoyer</button>
+
+    </form>
+
+
+
+
+    <script>
+        let myform = document.getElementById('myforme')
+        myform.addEventListener('submit', function (e) {
+            let myinput = document.getElementById('usernam')
+
+
+            if (myinput.value.trim() == "") {
+                let myerro = document.getElementById('erro');
+                myerro.innerHTML = "le champs usermane est requis.";
+                myerro.style.color = "red"
+                e.preventDefault();
+
+            }
+        })
+        myform.addEventListener('submit', function (e) {
+            let myinput = document.getElementById('usernamee')
+
+
+            if (myinput.value.trim() == "") {
+                let myerrore = document.getElementById('errore');
+                myerrore.innerHTML = "le champs usermane est requis.";
+                myerrore.style.color = "red"
+                e.preventDefault();
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
